@@ -1,18 +1,47 @@
-# custom_text_input
+# text_scroll
 
-A new Flutter plugin project.
+`TextScroll` Flutter widget adds text auto-scrolling functionality (marquee text).
 
-## Getting Started
+![demo](https://user-images.githubusercontent.com/29194552/148517560-6f41a081-9b34-4975-9052-a2855d46b555.gif)
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ - `endless` and `bouncing` modes
+ - delay and pause between rounds
+ - max number of rounds
+ - custom velocity
+ - `style` and `textAlign` support
 
-The plugin project was generated without specifying the `--platforms` flag, no platforms are currently supported.
-To add platforms, run `flutter create -t plugin --platforms <platforms> .` in this directory.
-You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
+## Getting started
+
+To use this package, add text_scroll as a dependency in your pubspec.yaml file.
+
+## Usage
+
+Minimal example:
+
+```dart
+    TextScroll('This is the sample text for Flutter TextScroll widget. ')
+```
+
+Custom settings:
+
+```dart
+    TextScroll(
+        'This is the sample text for Flutter TextScroll widget. ',
+        mode: TextScrollMode.bouncing,
+        velocity: Velocity(pixelsPerSecond: Offset(150, 0)),
+        delayBefore: Duration(milliseconds: 500),
+        numberOfReps: 5,
+        pauseBetween: Duration(milliseconds: 50),
+        style: TextStyle(color: Colors.green),
+        textAlign: TextAlign.right,
+        selectable: true,
+    )
+```
+
+## See also
+
+ - [github repo](https://github.com/yurii-khi/text_scroll)
+ - [pub.dev package](https://pub.dev/packages/text_scroll)
+ - [api reference](https://pub.dev/documentation/text_scroll/latest/text_scroll/TextScroll-class.html)
